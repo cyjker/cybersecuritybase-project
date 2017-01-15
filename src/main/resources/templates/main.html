@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Main page</title>
+    </head>
+    <body>
+
+        <h1>General vulnerable customer information application</h1>
+        
+        <p></p>
+        
+        <a href="/messages" th:if="${username} == 'ted2'">Messages list</a>
+        
+        <form action="#" th:action="@{/main}" method="POST">
+            <p><label for="message">Message</label>: <input type="text" name="message" id="message"/></p>
+            <p><input type="submit" value="Submit" /></p>
+        </form>
+        
+       <ul>
+           <li th:each="message : ${messages}" th:utext="${message.message}">message</li>
+       </ul>
+        
+    </body>
+</html>
