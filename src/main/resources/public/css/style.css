@@ -1,0 +1,24 @@
+.nav {
+    background-color:black;
+    padding: 10px;
+    margin: 10px;
+    overflow: auto;
+}
+
+.navdiv {
+    padding: 5px;
+    color:black;
+    float: left;
+}
+
+a.navlink:visited, a.navlink:link {
+    color:white;
+}
+
+a.navlink:hover {
+    color:green;
+}
+
+h1 {
+    margin: 5px;
+}

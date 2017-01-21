@@ -2,10 +2,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
     <head>
         <title>Messages</title>
+        <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
         <meta charset="UTF-8" />
     </head>
     <body>
 
+        <header th:replace="fragments/header :: header">
+            <p>header with links etc</p>
+        </header>
+        
         <h1>Messages</h1>
 
         <ul>
@@ -13,6 +18,8 @@
                 <span th:utext="${message.message}">message</span>
             </li>
         </ul>
+        
+        <a href="/main">Go back</a>
 
     </body>
 </html>

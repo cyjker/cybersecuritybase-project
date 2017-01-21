@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Header template</title>
+    </head>
+    <body>
+
+        <header th:fragment="header">
+            <div class="nav">
+                <div class="navdiv"><a class="navlink" th:href="@{/main}">Main page</a></div>
+                <div class="navdiv"><a class="navlink" th:href="@{/secret}">Secrets</a></div>
+                <div class="navdiv"><a class="navlink" th:href="@{/passwordform}">Change password</a></div>
+            </div>
+        </header>
+
+    </body>
+</html>

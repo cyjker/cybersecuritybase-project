@@ -2,14 +2,22 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
     <head>
         <title>Main page</title>
+        <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
     </head>
     <body>
 
-        <h1>General vulnerable customer information application</h1>
+        <header th:replace="fragments/header :: header">
+            <p>header with links etc</p>
+        </header>
         
         <p></p>
         
-        <a href="/messages" th:if="${username} == 'ted2'">Messages list</a>
+        <h1>Leave messages for yourself and others here</h1>
+        <p>You need to have permission to view messages left by others.</p>
+        
+        <p></p>
+        
+        <a class="messagelink" href="/messages" th:if="${username} == 'ted2'">Messages list</a>
         
         <form action="#" th:action="@{/main}" method="POST">
             <p><label for="message">Message</label>: <input type="text" name="message" id="message"/></p>
