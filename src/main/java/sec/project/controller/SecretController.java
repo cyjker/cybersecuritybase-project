@@ -5,7 +5,9 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import javax.annotation.PostConstruct;
 import org.h2.tools.RunScript;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -60,8 +62,12 @@ public class SecretController {
             names.add(name);
         }
         
-        model.addAttribute("ids", ids);
-        model.addAttribute("names", names);
+        Map<String, String> idsAndNames = new HashMap<>();
+        for (int i = 0; i < ids.size(); i++) {
+            idsAndNames.put(ids.get(i), names.get(i));
+        }
+        
+        model.addAttribute("idsandnames", idsAndNames);
         
         return "secret";
     }
